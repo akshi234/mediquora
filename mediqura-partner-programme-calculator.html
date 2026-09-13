@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Programme | MediQura</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --bg:#0a0a0c; --bg2:#0f0f12; --card:#141418; --card2:#18181d;
+  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.14);
+  --text:#f5f3ee; --muted:#9a9a92; --dim:#6e6e68;
+  --gold:#e8c257; --gold-deep:#d4a93a; --gold-soft:rgba(232,194,87,.12); --gold-line:rgba(232,194,87,.35);
+  --green:#22c55e; --red:#e0604f;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{min-height:100vh;background:var(--bg);color:var(--text);margin:0;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:72px 72px;}
+/* ── Nav ── */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:24px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:21px;color:#fff;}
+.logo .mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#f3d47c,var(--gold-deep));
+  display:flex;align-items:center;justify-content:center;font-size:17px;color:#1a1405;}
+.logo b{color:var(--gold);font-weight:800;}
+.nav-links{display:flex;gap:22px;margin-left:auto;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .15s;padding-bottom:3px;}
+.nav-links a:hover{color:#fff;border-bottom:2px solid var(--gold);}
+@media(max-width:720px){.nav-links{display:none;}}
+.nav-cta{margin-left:auto;background:linear-gradient(135deg,#f3d47c,var(--gold-deep));color:#1a1405;text-decoration:none;
+  font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:11px;transition:all .15s;white-space:nowrap;
+  box-shadow:0 0 24px rgba(232,194,87,.25);}
+@media(min-width:721px){.nav-cta{margin-left:0;}}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 32px rgba(232,194,87,.4);}
+/* ── Hero ── */
+.hero{padding:76px 20px 60px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-200px;right:-150px;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle, rgba(232,194,87,.13), transparent 65%);pointer-events:none;}
+.hero-in{max-width:1080px;margin:0 auto;position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+@media(max-width:860px){.hero-in{grid-template-columns:1fr;}}
+.badge{display:inline-flex;align-items:center;gap:9px;background:var(--gold-soft);border:1px solid var(--gold-line);
+  border-radius:999px;padding:8px 17px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--gold);}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-weight:800;font-size:clamp(34px,5.6vw,58px);line-height:1.05;margin:22px 0 18px;letter-spacing:-.02em;color:#fff;}
+h1 .g{color:var(--gold);}
+.sub{color:var(--muted);max-width:54ch;font-size:16px;line-height:1.7;margin:0 0 26px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(135deg,#f3d47c,var(--gold-deep));color:#1a1405;text-decoration:none;font-weight:700;
+  font-size:14.5px;padding:13px 22px;border-radius:12px;transition:all .15s;box-shadow:0 0 28px rgba(232,194,87,.25);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(232,194,87,.45);}
+.btn-line{border:1.5px solid var(--line2);color:var(--text);text-decoration:none;font-weight:600;font-size:14.5px;
+  padding:13px 22px;border-radius:12px;transition:all .15s;}
+.btn-line:hover{border-color:var(--gold-line);color:var(--gold);}
+/* hero trust pills (like the site) */
+.pills{display:flex;flex-direction:column;gap:11px;}
+.pill{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:15px 20px;font-size:14.5px;font-weight:500;transition:all .2s;}
+.pill:hover{border-color:var(--gold-line);transform:translateX(4px);}
+.pill .pi{color:var(--gold);font-size:16px;}
+.pill b{color:var(--gold);font-family:'IBM Plex Mono',monospace;margin-right:2px;}
+/* ── Sections ── */
+.wrap{max-width:1080px;margin:0 auto;padding:10px 20px 64px;}
+.grid{display:grid;grid-template-columns:1fr 370px;gap:26px;align-items:start;}
+@media(max-width:880px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;}
+.sec{margin:0 0 20px;}
+.sec .eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.sec h2{font-weight:800;font-size:clamp(21px,3vw,28px);margin:9px 0 6px;line-height:1.12;letter-spacing:-.01em;color:#fff;}
+.sec h2 .g{color:var(--gold);}
+.sec p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.6;max-width:58ch;}
+/* ── Tiers ── */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 16px;}
+@media(max-width:520px){.tiers{grid-template-columns:repeat(2,1fr);}}
+.tier{border:1.5px solid var(--line);border-radius:15px;padding:15px 8px;text-align:center;background:var(--card2);
+  font-size:12px;color:var(--muted);transition:transform .2s, box-shadow .2s, border-color .2s;position:relative;}
+.tier b{display:block;font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--gold);margin-top:5px;font-weight:600;}
+.tier small{display:block;font-size:10.5px;margin-top:3px;color:var(--dim);}
+.tier.on{border-color:var(--gold);background:linear-gradient(180deg, rgba(232,194,87,.16), rgba(232,194,87,.05));color:#fff;
+  transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(232,194,87,.5);}
+.tier.on::after{content:"ACTIVE";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,#f3d47c,var(--gold-deep));color:#1a1405;font-size:8.5px;font-weight:800;letter-spacing:.1em;
+  padding:3px 10px;border-radius:999px;white-space:nowrap;}
+.tier.done{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.06);}
+.tier.done::after{content:"✓ FILLED";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  background:#19603a;color:#b7f4cd;font-size:8.5px;font-weight:800;letter-spacing:.1em;padding:3px 10px;border-radius:999px;white-space:nowrap;}
+.loybadge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;padding:8px 15px;border-radius:999px;
+  margin-bottom:14px;border:1.5px solid var(--line);color:var(--muted);background:var(--card2);}
+.loybadge.on{border-color:var(--gold-line);color:var(--gold-deep);background:var(--gold-soft);}
+.progress .pline{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:8px;}
+.progress .pline b{color:var(--gold);}
+.pbar{height:9px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden;}
+.pbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),#f3d47c);
+  transition:width .45s cubic-bezier(.22,1,.36,1);box-shadow:0 0 14px rgba(232,194,87,.5);}
+/* ── Case rows ── */
+.proc{border-top:1px solid var(--line);padding:17px 0;display:grid;grid-template-columns:1fr auto auto;gap:10px 12px;align-items:center;animation:slideIn .3s ease;}
+.proc:first-of-type{margin-top:14px;}
+@keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.proc-name{font-weight:600;font-size:15px;display:flex;align-items:center;gap:11px;color:#fff;}
+.proc-name .pic{width:36px;height:36px;border-radius:11px;background:var(--gold-soft);border:1px solid var(--gold-line);
+  display:inline-flex;align-items:center;justify-content:center;font-size:17px;flex:none;}
+.val{display:flex;align-items:center;gap:9px;grid-column:1;margin-left:47px;flex-wrap:wrap;}
+.val .fee-label{font-size:12.5px;color:var(--muted);}
+.val input[type=number]{width:108px;border:1.5px solid var(--line2);border-radius:10px;padding:8px 11px;background:var(--bg2);
+  font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--text);transition:border-color .15s;}
+.val input[type=number]:hover{border-color:rgba(255,255,255,.25);}
+.val input[type=number]:focus-visible{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,194,87,.18);}
+.feechip{margin-left:47px;grid-column:1;font-size:12px;color:var(--gold);background:var(--gold-soft);border:1px solid var(--gold-line);
+  border-radius:999px;padding:4px 13px;width:fit-content;font-weight:600;}
+.feechip b{font-family:'IBM Plex Mono',monospace;}
+.step{display:flex;align-items:stretch;border:1.5px solid var(--line2);border-radius:12px;overflow:hidden;grid-row:span 3;background:var(--bg2);}
+.step button{border:0;background:transparent;width:38px;height:42px;font-size:19px;color:var(--gold);cursor:pointer;transition:background .12s;}
+.step button:hover{background:var(--gold-soft);}
+.step button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+.step span{min-width:46px;text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:#fff;
+  border-left:1.5px solid var(--line2);border-right:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center;}
+.rm{grid-row:span 3;border:0;background:transparent;color:var(--dim);font-size:16px;cursor:pointer;width:30px;height:30px;border-radius:9px;transition:all .15s;}
+.rm:hover{background:rgba(224,96,79,.15);color:var(--red);}
+.addbar{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap;}
+.addbar input{flex:1;min-width:150px;border:1.5px dashed var(--line2);border-radius:11px;padding:11px 14px;font:inherit;font-size:13.5px;
+  background:var(--bg2);color:var(--text);}
+.addbar input::placeholder{color:var(--dim);}
+.addbar input:focus-visible{outline:0;border-color:var(--gold);border-style:solid;box-shadow:0 0 0 3px rgba(232,194,87,.15);}
+.addbar input.feein{flex:0 0 130px;font-family:'IBM Plex Mono',monospace;}
+.addbar button{border:0;border-radius:11px;padding:11px 19px;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line);
+  font:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .15s;}
+.addbar button:hover{background:linear-gradient(135deg,#f3d47c,var(--gold-deep));color:#1a1405;}
+/* ── Profile ── */
+.field{display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding:16px 0;}
+.field:first-of-type{border-top:0;padding-top:14px;}
+.field label{font-size:14px;font-weight:600;color:#fff;}
+.field .fhint{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px;}
+.num{display:flex;align-items:stretch;border:1.5px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--bg2);}
+.num button{border:0;background:transparent;width:36px;height:40px;font-size:18px;color:var(--gold);cursor:pointer;transition:background .12s;}
+.num button:hover{background:var(--gold-soft);}
+.num input{width:58px;text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;border:0;background:transparent;
+  border-left:1.5px solid var(--line2);border-right:1.5px solid var(--line2);color:#fff;}
+.num input:focus-visible{outline:0;background:var(--gold-soft);}
+.switch{position:relative;width:48px;height:27px;border-radius:14px;background:rgba(255,255,255,.15);border:0;cursor:pointer;transition:background .18s;flex:none;}
+.switch[aria-pressed="true"]{background:linear-gradient(135deg,#f3d47c,var(--gold-deep));}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;
+  transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.4);}
+.switch[aria-pressed="true"]::after{left:24px;}
+.switch:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+/* ── Benefits ── */
+.benefit{display:flex;gap:14px;border:1.5px solid var(--line);border-radius:16px;padding:16px 17px;margin-top:12px;
+  align-items:flex-start;opacity:.55;transition:all .3s;background:var(--card2);}
+.benefit.on{opacity:1;border-color:var(--gold-line);background:linear-gradient(135deg, rgba(232,194,87,.14), rgba(232,194,87,.04));
+  box-shadow:0 12px 26px -14px rgba(232,194,87,.5);animation:unlock .4s ease;}
+@keyframes unlock{0%{transform:scale(.97)}60%{transform:scale(1.015)}100%{transform:scale(1)}}
+.benefit .ic{width:40px;height:40px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--gold-line);
+  display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;}
+.benefit .t{font-size:14px;font-weight:700;color:#fff;}
+.benefit .d{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:3px;}
+.benefit .st{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-top:7px;color:var(--dim);}
+.benefit.on .st{color:var(--gold);}
+/* ── Quote ── */
+.quote{background:var(--card);border:1px solid var(--gold-line);border-radius:20px;overflow:hidden;
+  position:sticky;top:78px;box-shadow:0 0 60px -20px rgba(232,194,87,.3);}
+.quote-head{background:linear-gradient(135deg, rgba(232,194,87,.2), rgba(232,194,87,.06));border-bottom:1px solid var(--gold-line);
+  padding:20px 22px;}
+.quote-head .qe{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);font-weight:800;}
+.quote-head h3{font-weight:800;font-size:20px;margin:6px 0 0;color:#fff;letter-spacing:-.01em;}
+.quote-body{padding:16px 22px 22px;}
+.qsec{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:13px 0 2px;}
+.line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:13.5px;border-bottom:1px dashed var(--line);animation:slideIn .25s ease;}
+.line .l{color:var(--muted);}
+.line .r{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--text);}
+.line small{display:block;color:var(--dim);font-size:11.5px;margin-top:2px;}
+.empty{color:var(--muted);font-size:13.5px;padding:16px 0;text-align:center;}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:17px 0 4px;}
+.total .l{font-weight:700;font-size:14px;color:#fff;}
+.total .r{font-family:'IBM Plex Mono',monospace;font-size:31px;font-weight:600;color:var(--gold);text-shadow:0 0 22px rgba(232,194,87,.45);}
+.effrate{font-size:12px;color:var(--muted);text-align:right;margin-top:-2px;}
+.effrate b{color:var(--gold);font-family:'IBM Plex Mono',monospace;}
+.annual{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:13px;padding:13px 16px;margin-top:14px;
+  display:flex;justify-content:space-between;align-items:center;font-size:13.5px;}
+.annual .l{font-weight:600;color:#fff;}
+.annual .r{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;color:var(--gold);}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:14px;}
+.perks{margin-top:15px;border-top:1px solid var(--line);padding-top:13px;}
+.perks .pt{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.perk{display:flex;gap:8px;font-size:12.5px;padding:4px 0;align-items:baseline;color:var(--text);}
+.perk .dot{color:var(--gold);font-weight:700;}
+.note{font-size:11.5px;color:var(--dim);margin-top:18px;line-height:1.65;}
+.cta{display:block;width:100%;margin-top:17px;border:0;border-radius:13px;padding:14px;text-align:center;text-decoration:none;
+  background:linear-gradient(135deg,#f3d47c,var(--gold-deep));color:#1a1405;font:inherit;font-weight:800;font-size:14.5px;
+  cursor:pointer;transition:all .15s;box-shadow:0 0 30px rgba(232,194,87,.3);}
+.cta:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(232,194,87,.5);}
+.cta2{display:block;width:100%;margin-top:9px;border-radius:13px;padding:12px;text-align:center;text-decoration:none;
+  border:1.5px solid var(--line2);color:var(--muted);font-weight:600;font-size:13px;transition:all .15s;}
+.cta2:hover{border-color:var(--gold-line);color:var(--gold);}
+/* ── Why strip ── */
+.why{max-width:1080px;margin:6px auto 0;padding:0 20px 70px;}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;}
+@media(max-width:880px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.why-grid{grid-template-columns:1fr;}}
+.why-card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;transition:all .2s;}
+.why-card:hover{border-color:var(--gold-line);transform:translateY(-4px);box-shadow:0 16px 34px -18px rgba(232,194,87,.4);}
+.why-card .wi{width:42px;height:42px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--gold-line);
+  display:flex;align-items:center;justify-content:center;font-size:20px;}
+.why-card b{display:block;font-size:14.5px;margin:12px 0 5px;color:#fff;}
+.why-card p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.6;}
+/* ── Footer ── */
+.footer{background:var(--bg2);border-top:1px solid var(--line);color:var(--muted);padding:40px 20px 26px;}
+.footer-in{max-width:1080px;margin:0 auto;}
+.ft{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:13px;}
+.flogos{display:flex;gap:9px 10px;flex-wrap:wrap;}
+.flogos span{background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:7px 15px;font-size:12.5px;white-space:nowrap;transition:all .15s;}
+.flogos span:hover{border-color:var(--gold-line);color:var(--text);}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:26px;padding-top:22px;
+  border-top:1px solid var(--line);font-size:13px;line-height:1.7;}
+.fbottom b{color:#fff;font-weight:800;font-size:16px;}
+.fbottom b i{color:var(--gold);font-style:normal;}
+.fcontact{text-align:right;}
+@media(max-width:640px){.fcontact{text-align:left;}}
+.fcontact a{color:var(--gold);text-decoration:none;}
+.fcontact a:hover{text-decoration:underline;}
+.fcopy{margin-top:18px;font-size:11.5px;color:var(--dim);}
+/* ── WhatsApp float ── */
+.wafloat{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;z-index:60;
+  background:linear-gradient(135deg,#34d871,#1fae53);display:flex;align-items:center;justify-content:center;
+  font-size:27px;text-decoration:none;box-shadow:0 8px 26px rgba(34,197,94,.45);transition:transform .15s;}
+.wafloat:hover{transform:scale(1.08);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="https://mediqura.in" target="_blank" rel="noopener"><span class="mark">⚕</span>Medi<b>Qura</b></a>
+    <div class="nav-links">
+      <a href="#tiers">Commission tiers</a>
+      <a href="#cases">Calculator</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#quote">Your quote</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/917986264049?text=Hi%20MediQura!%20I%20want%20to%20join%20the%20Partner%20Programme.">🤝 Become a partner</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="badge"><span class="dot"></span>Partner Programme</div>
+      <h1>From First Referral to <span class="g">Full Reward.</span><br>We Handle Everything.</h1>
+      <p class="sub">
+        MediQura connects patients from all 54 African nations to India's top NABH-accredited
+        hospitals. As an partner, you earn a fixed commission for every successful
+        referral, and your per-case payout grows with your monthly volume across four levels.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-gold" href="#cases">🧮 Try the calculator</a>
+        <a class="btn-line" href="#rewards">See partner rewards</a>
+      </div>
+    </div>
+    <div class="pills">
+      <div class="pill"><span class="pi">💰</span><span>Fixed USD payout on <b>every</b> successful case</span></div>
+      <div class="pill"><span class="pi">📈</span><span><b>4 levels</b> of payouts that grow with your volume</span></div>
+      <div class="pill"><span class="pi">💵</span><span>No hidden charges, USD payouts upfront</span></div>
+      <div class="pill"><span class="pi">🏥</span><span>Hospital bills paid directly to the hospital</span></div>
+      <div class="pill"><span class="pi">🌍</span><span>Serving all 54 African countries</span></div>
+      <div class="pill"><span class="pi">💬</span><span>24/7 WhatsApp support for you and your patients</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid">
+    <!-- Left: inputs -->
+    <div>
+      <div class="card" style="margin-bottom:24px" id="tiers">
+        <div class="sec">
+          <div class="eyebrow">Commission levels · Progressive</div>
+          <h2>Every Case Counts. <span class="g">Each Level Pays More.</span></h2>
+          <p>Levels apply progressively, like steps: your 1st–5th cases pay Level 1, your 6th–10th cases pay Level 2, your 11th–20th pay Level 3, and every case from the 21st onwards pays Level 4, your maximum payout.</p>
+        </div>
+        <div id="loyaltyBadge"></div>
+        <div class="tiers" id="tierUI"></div>
+        <div class="progress" id="progressUI"></div>
+      </div>
+
+      <div class="card" style="margin-bottom:24px" id="cases">
+        <div class="sec">
+          <div class="eyebrow">Calculator</div>
+          <h2>Your Referrals, <span class="g">Your Earnings.</span></h2>
+          <p>Average costs at India's top hospitals are pre-filled from MediQura's published rates. Your per-case payout is calculated automatically from the case type and your monthly volume.</p>
+        </div>
+        <div id="procs"></div>
+        <div class="addbar">
+          <input id="newName" type="text" placeholder="New case type (e.g. Neurology case)" maxlength="40">
+          <input id="newFee" class="feein" type="number" placeholder="Avg cost $" min="0" step="500">
+          <button onclick="addCase()">+ Add case type</button>
+        </div>
+      </div>
+
+      <div class="card" id="rewards">
+        <div class="sec">
+          <div class="eyebrow">Partner journey</div>
+          <h2>Loyalty That <span class="g">Pays You Back.</span></h2>
+          <p>Tell us about your journey with MediQura to see which rewards you unlock.</p>
+        </div>
+
+        <div class="field">
+          <label>Months as a partner
+            <span class="fhint">Time since you joined the programme</span>
+          </label>
+          <div class="num">
+            <button aria-label="Decrease months" onclick="chg('months',-1)">−</button>
+            <input id="v-months" type="number" min="0" value="3" oninput="setDirect('months', this.value)">
+            <button aria-label="Increase months" onclick="chg('months',1)">+</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Total referrals so far
+            <span class="fhint">All successful cases since joining</span>
+          </label>
+          <div class="num">
+            <button aria-label="Decrease referrals" onclick="chg('refs',-5)">−</button>
+            <input id="v-refs" type="number" min="0" value="10" oninput="setDirect('refs', this.value)">
+            <button aria-label="Increase referrals" onclick="chg('refs',5)">+</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Medical background
+            <span class="fhint">Doctor, nurse, pharmacist, or allied health qualification</span>
+          </label>
+          <button class="switch" id="v-med" aria-pressed="false" aria-label="Medical background" onclick="toggleMed()"></button>
+        </div>
+
+        <div id="benefits"></div>
+      </div>
+    </div>
+
+    <!-- Right: itemised quote -->
+    <div class="quote" id="quote">
+      <div class="quote-head">
+        <div class="qe">Itemised · USD · Live</div>
+        <h3>Your Commission Quote</h3>
+      </div>
+      <div class="quote-body">
+        <div id="items"></div>
+        <div id="brackets"></div>
+        <div class="total"><span class="l">Monthly commission</span><span class="r" id="monthly">$0</span></div>
+        <div class="effrate" id="effrate"></div>
+        <div class="annual"><span class="l">✨ Projected annual</span><span class="r" id="annual">$0</span></div>
+        <div class="meta"><span id="caseCount">0 cases / month</span><span id="caseValue">$0 total avg hospital cost</span></div>
+        <div class="perks" id="perkList" style="display:none">
+          <div class="pt">Rewards unlocked</div>
+          <div id="perkItems"></div>
+        </div>
+        <a class="cta" href="https://wa.me/917986264049?text=Hi%20MediQura!%20I%20want%20to%20join%20the%20Partner%20Programme." target="_blank" rel="noopener">💬 Become a MediQura Partner</a>
+        <a class="cta2" href="mailto:info@mediqura.in?subject=Partner%20Partner%20Programme">✉️ Or email info@mediqura.in</a>
+        <p class="note">
+          Estimates based on average costs at India's top hospitals; actual commission is
+          confirmed on each itemised case and settled directly by MediQura. Hospital bills are
+          always paid directly to the hospital — never through MediQura.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why">
+  <div class="sec">
+    <div class="eyebrow">Why partner with MediQura</div>
+    <h2>A Programme Built on <span class="g">Trust and Transparency.</span></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="wi">🤝</div><b>Zero-risk for patients</b><p>Hospital bills go straight to the hospital — never through MediQura. Your referrals stay protected.</p></div>
+    <div class="why-card"><div class="wi">🧭</div><b>We handle everything</b><p>Visa, flights, hotel, interpretation, and a dedicated case manager — from first call to full recovery.</p></div>
+    <div class="why-card"><div class="wi">💵</div><b>Clear USD payouts</b><p>Progressive commission on every successful case, settled directly by MediQura. No hidden maths.</p></div>
+    <div class="why-card"><div class="wi">🏆</div><b>Rewards that grow</b><p>Star performer recognition, a sponsored annual trip, and medical training opportunities in India.</p></div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-in">
+    <div class="ft">Trusted hospital partners across India</div>
+    <div class="flogos">
+      <span>🏥 Apollo Hospitals</span><span>🏥 Max Healthcare</span><span>🏥 Fortis</span>
+      <span>🏥 Medanta</span><span>🏥 Narayana Health</span><span>🏥 Manipal</span>
+      <span>🏥 Kokilaben</span><span>🏥 BLK Super Speciality</span>
+    </div>
+    <div class="fbottom">
+      <div>
+        <b>Medi<i>Qura</i></b> — Africa's gateway to world-class healthcare in India.<br>
+        Serving patients from all 54 African nations with care, clarity, and compassion.
+      </div>
+      <div class="fcontact">
+        🇮🇳 India · +91-79862-64049 &nbsp;|&nbsp; 🇰🇪 Kenya · +254 792 433 214<br>
+        <a href="mailto:info@mediqura.in">info@mediqura.in</a> · <a href="https://mediqura.in" target="_blank" rel="noopener">mediqura.in</a>
+      </div>
+    </div>
+    <div class="fcopy">© 2026 MediQura. All rights reserved.</div>
+  </div>
+</div>
+
+<a class="wafloat" href="https://wa.me/917986264049" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+const SERVICE_FEE_PCT = 15;
+const ICONS = ["🩹","💊","🔬","🧬","🩻","⚕️"];
+let nextId = 1;
+const mkRow = (name, ic, cost, cases=0) => ({ id:"c"+(nextId++), name, ic, cost, cases });
+
+const state = {
+  rows: [
+    mkRow("Cardiac bypass","❤️",6500,2),
+    mkRow("IVF cycle","👶",3000),
+    mkRow("Knee replacement","🦵",6000),
+    mkRow("Cancer care","🎗️",11000),
+    mkRow("Liver transplant","🫀",30000),
+    mkRow("Hip replacement","🦴",6500),
+  ],
+  months: 3, refs: 10, medical: false,
+};
+const TIERS_STANDARD = [
+  { from:1,  to:5,        rate:8,  label:"Cases 1–5",   lvl:"Level 1" },
+  { from:6,  to:10,       rate:10, label:"Cases 6–10",  lvl:"Level 2" },
+  { from:11, to:20,       rate:12, label:"Cases 11–20", lvl:"Level 3" },
+  { from:21, to:Infinity, rate:15, label:"Cases 21+",   lvl:"Level 4" },
+];
+const TIERS_LOYALTY = [
+  { from:1,  to:5,        rate:10, label:"Cases 1–5",   lvl:"Level 1" },
+  { from:6,  to:10,       rate:12, label:"Cases 6–10",  lvl:"Level 2" },
+  { from:11, to:20,       rate:15, label:"Cases 11–20", lvl:"Level 3" },
+  { from:21, to:Infinity, rate:18, label:"Cases 21+",   lvl:"Level 4" },
+];
+function currentTiers(){ return state.months >= 3 ? TIERS_LOYALTY : TIERS_STANDARD; }
+const BENEFITS = [
+  {
+    id:"star", ic:"⭐", t:"Star Performer Reward",
+    d:"Complete 3 months as a partner with 30+ successful referrals to earn special recognition and a performance reward.",
+    check: s => s.months >= 3 && s.refs >= 30,
+    req: "3+ months · 30+ referrals",
+  },
+  {
+    id:"trip", ic:"✈️", t:"Sponsored Trip",
+    d:"Partners who complete one full year with MediQura earn a fully sponsored trip.",
+    check: s => s.months >= 12,
+    req: "12+ months as a partner",
+  },
+  {
+    id:"med", ic:"🩺", t:"Internship · Fellowship · Industrial Training",
+    d:"Partners with a medical background get the chance to pursue an internship, fellowship, or industrial training with our partner network in India.",
+    check: s => s.medical,
+    req: "Medical background",
+  },
+];
+const fmt = n => n.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0});
+const feeOf = cost => cost * SERVICE_FEE_PCT / 100;
+const payOf = (cost, rate) => feeOf(cost) * rate / 100;
+const fmt2 = n => n.toLocaleString("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
+const payRange = cost => { const T=currentTiers(); return fmt2(payOf(cost, T[0].rate)) + " – " + fmt2(payOf(cost, T[T.length-1].rate)); };
+
+const animState = {};
+function animateMoney(elId, target){
+  const el = document.getElementById(elId);
+  const from = animState[elId] ?? 0;
+  if(from === target){ el.textContent = fmt(target); return; }
+  const start = performance.now(), dur = 420;
+  cancelAnimationFrame(animState[elId+"_raf"]);
+  function tick(now){
+    const p = Math.min(1,(now-start)/dur);
+    const ease = 1 - Math.pow(1-p, 3);
+    el.textContent = fmt(Math.round(from + (target-from)*ease));
+    if(p < 1) animState[elId+"_raf"] = requestAnimationFrame(tick);
+  }
+  animState[elId+"_raf"] = requestAnimationFrame(tick);
+  animState[elId] = target;
+}
+
+function chg(key, delta){
+  state[key] = Math.max(0, state[key] + delta);
+  document.getElementById("v-"+(key==="months"?"months":"refs")).value = state[key];
+  render();
+}
+function setDirect(key, v){
+  state[key] = Math.max(0, Math.floor(+v || 0));
+  render();
+}
+function toggleMed(){
+  state.medical = !state.medical;
+  document.getElementById("v-med").setAttribute("aria-pressed", state.medical);
+  render();
+}
+function changeCases(id, delta){
+  const r = state.rows.find(r => r.id===id);
+  r.cases = Math.max(0, r.cases + delta);
+  document.getElementById("cases-"+id).textContent = r.cases;
+  render();
+}
+function changeCost(id, v){
+  const r = state.rows.find(r => r.id===id);
+  r.cost = Math.max(0, +v || 0);
+  document.getElementById("fee-"+id).textContent = payRange(r.cost);
+  render();
+}
+function removeCase(id){
+  state.rows = state.rows.filter(r => r.id!==id);
+  buildProcs(); render();
+}
+function addCase(){
+  const nameEl = document.getElementById("newName");
+  const feeEl = document.getElementById("newFee");
+  const name = nameEl.value.trim();
+  if(!name){ nameEl.focus(); return; }
+  const cost = Math.max(0, +feeEl.value || 5000);
+  const ic = ICONS[state.rows.length % ICONS.length];
+  state.rows.push(mkRow(name, ic, cost, 1));
+  nameEl.value = ""; feeEl.value = "";
+  buildProcs(); render();
+}
+document.addEventListener("keydown", e => {
+  if(e.key==="Enter" && (document.activeElement.id==="newName" || document.activeElement.id==="newFee")) addCase();
+});
+
+function buildProcs(){
+  document.getElementById("procs").innerHTML = state.rows.map(r => `
+    <div class="proc">
+      <div>
+        <div class="proc-name"><span class="pic">${r.ic}</span>${r.name}</div>
+      </div>
+      <div class="step" aria-label="${r.name}s per month">
+        <button aria-label="Remove one ${r.name}" onclick="changeCases('${r.id}',-1)">−</button>
+        <span id="cases-${r.id}">${r.cases}</span>
+        <button aria-label="Add one ${r.name}" onclick="changeCases('${r.id}',1)">+</button>
+      </div>
+      <button class="rm" title="Remove case type" aria-label="Remove ${r.name} row" onclick="removeCase('${r.id}')">✕</button>
+      <div class="val">
+        <span class="fee-label">Avg cost at India's top hospitals (USD)</span>
+        <input type="number" min="0" step="500" value="${r.cost}"
+          aria-label="${r.name} average hospital cost" oninput="changeCost('${r.id}', this.value)">
+      </div>
+      <div class="feechip">You earn <b id="fee-${r.id}">${payRange(r.cost)}</b> per case</div>
+    </div>`).join("");
+}
+
+function computeCommission(totalCases, totalFees){
+  if(totalCases === 0) return { commission:0, brackets:[] };
+  const avgFee = totalFees / totalCases;
+  let remaining = totalCases, commission = 0;
+  const brackets = [];
+  const TIERS = currentTiers();
+  for(const t of TIERS){
+    if(remaining <= 0) break;
+    const cap = t.to === Infinity ? remaining : (t.to - t.from + 1);
+    const inBracket = Math.min(remaining, cap);
+    const amt = inBracket * avgFee * t.rate / 100;
+    brackets.push({ ...t, cases:inBracket, amount:amt });
+    commission += amt;
+    remaining -= inBracket;
+  }
+  return { commission, brackets };
+}
+
+function render(){
+  const totalCases = state.rows.reduce((s,r)=>s+r.cases,0);
+  const totalFees  = state.rows.reduce((s,r)=>s+r.cases*feeOf(r.cost),0);
+  const { commission, brackets } = computeCommission(totalCases, totalFees);
+  const isLoyal = state.months >= 3;
+  const TIERS = currentTiers();
+
+  document.getElementById("loyaltyBadge").innerHTML = isLoyal
+    ? `<div class="loybadge on">🏆 Loyalty rates active — you've passed 3 months as a partner</div>`
+    : `<div class="loybadge">⏳ Starting rates — loyalty rates unlock automatically after 3 months</div>`;
+
+  const activeIdx = TIERS.findIndex(t => totalCases + 1 >= t.from && totalCases + 1 <= t.to);
+  document.getElementById("tierUI").innerHTML = TIERS.map((t,i)=>{
+    let cls = "";
+    if(totalCases > 0 && i === activeIdx) cls = " on";
+    else if(totalCases >= t.to && t.to !== Infinity) cls = " done";
+    else if(t.to === Infinity && totalCases >= t.from) cls = " on";
+    return `<div class="tier${cls}">${t.label}<b>${t.lvl}</b><small>payout per case</small></div>`;
+  }).join("");
+
+  const progressUI = document.getElementById("progressUI");
+  if(totalCases > 0 && activeIdx >= 0 && TIERS[activeIdx].to !== Infinity){
+    const t = TIERS[activeIdx];
+    const nextT = TIERS[activeIdx+1];
+    const need = t.to + 1 - totalCases;
+    const pct = Math.min(100, ((totalCases - (t.from-1)) / (t.to - (t.from-1))) * 100);
+    progressUI.innerHTML = `
+      <div class="pline"><span>${need} more case${need===1?"":"s"} and every extra case pays at <b>${nextT.lvl}</b></span><span>${totalCases}/${t.to}</span></div>
+      <div class="pbar"><i style="width:${pct}%"></i></div>`;
+  } else if(totalCases > 0){
+    progressUI.innerHTML = `
+      <div class="pline"><span>🏆 Every case from here pays at <b>Level 4</b>, your maximum payout.</span></div>
+      <div class="pbar"><i style="width:100%"></i></div>`;
+  } else {
+    progressUI.innerHTML = "";
+  }
+
+  const items = state.rows.filter(r => r.cases>0);
+  document.getElementById("items").innerHTML = items.length===0
+    ? `<div class="empty">Add referred cases to see your estimate.</div>`
+    : `<div class="qsec">Referred cases</div>` + items.map(r => `
+      <div class="line">
+        <span class="l">${r.ic} ${r.name} × ${r.cases}
+          <small>${fmt(r.cost)} avg hospital cost · you earn ${payRange(r.cost)} each</small>
+        </span>
+        <span class="r">× ${r.cases}</span>
+      </div>`).join("");
+
+  document.getElementById("brackets").innerHTML = brackets.length === 0 ? "" :
+    `<div class="qsec">Commission breakdown</div>` + brackets.map(b => `
+      <div class="line">
+        <span class="l">${b.label} · ${b.cases} case${b.cases===1?"":"s"} at ${b.lvl}</span>
+        <span class="r">${fmt(Math.round(b.amount))}</span>
+      </div>`).join("");
+
+  animateMoney("monthly", Math.round(commission));
+  animateMoney("annual", Math.round(commission*12));
+  document.getElementById("effrate").innerHTML = "";
+  document.getElementById("caseCount").textContent =
+    totalCases + " case" + (totalCases===1?"":"s") + " / month";
+  const totalCost = state.rows.reduce((s,r)=>s+r.cases*r.cost,0);
+  document.getElementById("caseValue").textContent = fmt(totalCost) + " total avg hospital cost";
+
+  document.getElementById("benefits").innerHTML = BENEFITS.map(b => {
+    const on = b.check(state);
+    return `
+    <div class="benefit${on?" on":""}">
+      <div class="ic">${b.ic}</div>
+      <div>
+        <div class="t">${b.t}</div>
+        <div class="d">${b.d}</div>
+        <div class="st">${on ? "✓ Unlocked" : "Requires: " + b.req}</div>
+      </div>
+    </div>`;
+  }).join("");
+
+  const unlocked = BENEFITS.filter(b => b.check(state));
+  const perkList = document.getElementById("perkList");
+  if(unlocked.length){
+    perkList.style.display = "block";
+    document.getElementById("perkItems").innerHTML = unlocked.map(b =>
+      `<div class="perk"><span class="dot">✓</span><span>${b.ic} ${b.t}</span></div>`).join("");
+  } else {
+    perkList.style.display = "none";
+  }
+}
+
+buildProcs();
+render();
+</script>
+</body>
+</html>
